@@ -5,36 +5,41 @@
 @tailwind utilities;
 
 :root {
-  --background: 240 10% 3.9%; /* #0D1117 */
-  --foreground: 0 0% 98%; /* #C9D1D9 */
-  --muted: 240 3.7% 15.9%; /* #161B22 */
-  --muted-foreground: 240 5% 64.9%; /* #8B949E */
-  --popover: 240 10% 3.9%; /* #0D1117 */
-  --popover-foreground: 0 0% 98%; /* #C9D1D9 */
-  --card: 240 10% 3.9%; /* #161B22 */
-  --card-foreground: 0 0% 98%; /* #C9D1D9 */
-  --border: 240 3.7% 15.9%; /* #21262D */
-  --input: 240 3.7% 15.9%; /* #21262D */
-  --primary: 136 100% 50%; /* #00FF41 */
-  --primary-foreground: 240 10% 3.9%; /* #0D1117 */
-  --secondary: 180 100% 50%; /* #00FFFF */
-  --secondary-foreground: 240 10% 3.9%; /* #0D1117 */
-  --accent: 320 100% 50%; /* #FF0080 */
-  --accent-foreground: 0 0% 98%; /* #C9D1D9 */
+  --background: 0 0% 4%; /* #0A0A0A */
+  --foreground: 0 0% 95%; /* #F2F2F2 */
+  --muted: 0 0% 8%; /* #141414 */
+  --muted-foreground: 0 0% 60%; /* #999999 */
+  --popover: 0 0% 4%; /* #0A0A0A */
+  --popover-foreground: 0 0% 95%; /* #F2F2F2 */
+  --card: 0 0% 6%; /* #0F0F0F */
+  --card-foreground: 0 0% 95%; /* #F2F2F2 */
+  --border: 0 0% 12%; /* #1F1F1F */
+  --input: 0 0% 12%; /* #1F1F1F */
+  --primary: 0 85% 55%; /* #DC2626 */
+  --primary-foreground: 0 0% 95%; /* #F2F2F2 */
+  --secondary: 0 85% 45%; /* #B91C1C */
+  --secondary-foreground: 0 0% 95%; /* #F2F2F2 */
+  --accent: 0 100% 60%; /* #FF3333 */
+  --accent-foreground: 0 0% 95%; /* #F2F2F2 */
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 60 9.1% 97.8%;
-  --ring: 136 100% 50%; /* #00FF41 */
-  --radius: 0.5rem;
+  --ring: 0 85% 55%; /* #DC2626 */
+  --radius: 0.25rem;
 
-  /* Custom hacker theme colors */
-  --matrix: 136 100% 50%; /* #00FF41 */
-  --cyber-cyan: 180 100% 50%; /* #00FFFF */
-  --neon-pink: 320 100% 50%; /* #FF0080 */
-  --dark-bg: 240 10% 3.9%; /* #0D1117 */
-  --dark-surface: 240 3.7% 15.9%; /* #161B22 */
-  --dark-border: 240 3.7% 15.9%; /* #21262D */
-  --text-primary: 0 0% 98%; /* #C9D1D9 */
-  --text-secondary: 240 5% 64.9%; /* #8B949E */
+  /* Red teamer theme colors */
+  --hack-red: 0 85% 55%; /* #DC2626 */
+  --blood-red: 0 100% 35%; /* #B30000 */
+  --dark-red: 0 85% 25%; /* #661515 */
+  --warning-orange: 25 100% 50%; /* #FF8000 */
+  --terminal-green: 120 100% 35%; /* #00B300 */
+  --exploit-purple: 270 100% 60%; /* #9933FF */
+  --dark-bg: 0 0% 4%; /* #0A0A0A */
+  --dark-surface: 0 0% 8%; /* #141414 */
+  --darker-surface: 0 0% 6%; /* #0F0F0F */
+  --dark-border: 0 0% 15%; /* #262626 */
+  --text-primary: 0 0% 95%; /* #F2F2F2 */
+  --text-secondary: 0 0% 70%; /* #B3B3B3 */
+  --text-danger: 0 85% 55%; /* #DC2626 */
 }
 
 .dark {
@@ -78,17 +83,25 @@
   }
 }
 
-/* Custom hacker theme utilities */
-.text-matrix {
-  color: hsl(var(--matrix));
+/* Red teamer theme utilities */
+.text-hack-red {
+  color: hsl(var(--hack-red));
 }
 
-.text-cyber-cyan {
-  color: hsl(var(--cyber-cyan));
+.text-blood-red {
+  color: hsl(var(--blood-red));
 }
 
-.text-neon-pink {
-  color: hsl(var(--neon-pink));
+.text-terminal-green {
+  color: hsl(var(--terminal-green));
+}
+
+.text-warning-orange {
+  color: hsl(var(--warning-orange));
+}
+
+.text-exploit-purple {
+  color: hsl(var(--exploit-purple));
 }
 
 .text-text-primary {
@@ -99,6 +112,10 @@
   color: hsl(var(--text-secondary));
 }
 
+.text-text-danger {
+  color: hsl(var(--text-danger));
+}
+
 .bg-dark-bg {
   background-color: hsl(var(--dark-bg));
 }
@@ -107,36 +124,47 @@
   background-color: hsl(var(--dark-surface));
 }
 
+.bg-darker-surface {
+  background-color: hsl(var(--darker-surface));
+}
+
 .border-dark-border {
   border-color: hsl(var(--dark-border));
 }
 
-.border-matrix {
-  border-color: hsl(var(--matrix));
+.border-hack-red {
+  border-color: hsl(var(--hack-red));
 }
 
 /* Terminal window styling */
 .terminal-window {
-  background: linear-gradient(145deg, hsl(var(--dark-surface)), hsl(var(--dark-bg)));
+  background: linear-gradient(145deg, hsl(var(--darker-surface)), hsl(var(--dark-bg)));
   border: 1px solid hsl(var(--dark-border));
-  box-shadow: 0 8px 32px hsla(var(--matrix) / 0.1);
+  box-shadow: 0 8px 32px hsla(var(--hack-red) / 0.1), 0 0 1px hsla(var(--hack-red) / 0.2);
 }
 
-/* Neon border effect */
-.neon-border {
-  box-shadow: 0 0 20px hsla(var(--matrix) / 0.3), inset 0 0 20px hsla(var(--matrix) / 0.1);
-  border: 1px solid hsl(var(--matrix));
+/* Red teamer border effect */
+.red-border {
+  box-shadow: 0 0 20px hsla(var(--hack-red) / 0.4), inset 0 0 20px hsla(var(--hack-red) / 0.1);
+  border: 1px solid hsl(var(--hack-red));
+}
+
+/* Exploit glow effect */
+.exploit-glow {
+  box-shadow: 0 0 15px hsla(var(--exploit-purple) / 0.3), inset 0 0 15px hsla(var(--exploit-purple) / 0.05);
+  border: 1px solid hsl(var(--exploit-purple));
 }
 
 /* Hover effects */
-.hover-matrix:hover {
-  background: linear-gradient(45deg, hsla(var(--matrix) / 0.1), hsla(var(--cyber-cyan) / 0.05));
-  border-color: hsl(var(--matrix));
+.hover-hack:hover {
+  background: linear-gradient(45deg, hsla(var(--hack-red) / 0.1), hsla(var(--blood-red) / 0.05));
+  border-color: hsl(var(--hack-red));
   transform: translateY(-2px);
   transition: all 0.3s ease;
+  box-shadow: 0 4px 20px hsla(var(--hack-red) / 0.2);
 }
 
-/* Matrix rain animation */
+/* Red code rain animation */
 .matrix-bg {
   position: fixed;
   top: 0;
@@ -150,17 +178,18 @@
 
 .matrix-char {
   position: absolute;
-  color: hsl(var(--matrix));
+  color: hsl(var(--hack-red));
   font-family: 'Fira Code', monospace;
   font-size: 14px;
   animation: matrix-rain linear infinite;
-  opacity: 0.7;
+  opacity: 0.6;
+  text-shadow: 0 0 5px hsla(var(--hack-red) / 0.5);
 }
 
 /* Scan lines effect */
 .scan-lines {
-  background: linear-gradient(transparent 50%, hsla(var(--matrix) / 0.03) 50%);
-  background-size: 100% 4px;
+  background: linear-gradient(transparent 50%, hsla(var(--hack-red) / 0.02) 50%);
+  background-size: 100% 3px;
 }
 
 /* Glitch text effect */
@@ -180,13 +209,13 @@
 
 .glitch-text::before {
   animation: glitch 2s infinite;
-  color: hsl(var(--neon-pink));
+  color: hsl(var(--hack-red));
   z-index: -1;
 }
 
 .glitch-text::after {
   animation: glitch 3s infinite reverse;
-  color: hsl(var(--cyber-cyan));
+  color: hsl(var(--exploit-purple));
   z-index: -2;
 }
 
@@ -194,7 +223,7 @@
 .typing-animation::after {
   content: '|';
   animation: terminal-cursor 1s infinite;
-  color: hsl(var(--matrix));
+  color: hsl(var(--hack-red));
 }
 
 /* Animations */
