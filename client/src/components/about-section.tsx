@@ -47,19 +47,20 @@ export default function AboutSection() {
                     const Icon = stat.icon;
                     return (
                       <div key={index} className="bg-dark-surface p-4 rounded border border-dark-border hover-matrix">
-                        <div className="flex justify-between items-center">
-                          <span className="text-matrix flex items-center">
-                            <Icon className="w-4 h-4 mr-2" />
-                            {stat.label}
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="flex items-center text-matrix font-semibold">
+                            <Icon className="w-5 h-5 mr-2" />
+                            <span>{stat.label}</span>
                           </span>
-                          <span className="text-sm">{stat.status}</span>
+                          <span className="text-xs text-cyber-cyan font-mono">{stat.status}</span>
                         </div>
-                        <div className="w-full bg-dark-bg rounded-full h-2 mt-2">
-                          <div 
+                        <div className="w-full bg-dark-bg rounded-full h-2">
+                          <div
                             className="bg-gradient-to-r from-matrix to-cyber-cyan h-2 rounded-full transition-all duration-1000"
                             style={{ width: `${stat.value}%` }}
                           ></div>
                         </div>
+                        <div className="text-right text-xs text-text-secondary mt-1 font-mono">{stat.value}%</div>
                       </div>
                     );
                   })}

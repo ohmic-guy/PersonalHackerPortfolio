@@ -34,7 +34,7 @@ export default function ExperienceSection() {
       degree: "Higher Secondary Education",
       institution: "Narasinga Choudhury Higher Secondary School",
       period: "Apr 2020 - Jul 2022",
-      location: "Odisha, India",
+      location: "Jajpur, Odisha, India",
       description: "Completed 12th grade with focus on science and mathematics foundation.",
       current: false,
     },

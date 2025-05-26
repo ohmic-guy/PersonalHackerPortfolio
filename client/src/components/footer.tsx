@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="font-mono text-center">
             <div className="text-matrix mb-2">$ echo "Connection terminated successfully"</div>
             <div className="text-text-secondary mb-4">
-              © 2025 Ommkar Ankit Rout. All systems secured.
+              © 2025 Ohmic Guy. All systems secured.
             </div>
             <div className="text-cyber-cyan">
               Designed with <Heart className="inline-block w-4 h-4 text-neon-pink mx-1" /> using terminal aesthetics
