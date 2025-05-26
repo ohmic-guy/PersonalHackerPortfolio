@@ -1,10 +1,10 @@
 # Ommkar Ankit Rout - Cybersecurity Portfolio
 
-A hacker-themed personal portfolio website showcasing cybersecurity expertise, AI/ML projects, and professional experience.
+A personal portfolio website showcasing cybersecurity expertise, AI/ML projects, and professional experience.
 
 ## 🚀 Features
 
-- **Dark Hacker Theme** with Matrix-style green colors and terminal aesthetics
+- **Dark Theme** with Matrix-style green colors and terminal aesthetics
 - **Interactive Terminal** simulator with custom commands
 - **Matrix Rain Animation** background effect
 - **Responsive Design** optimized for all devices
