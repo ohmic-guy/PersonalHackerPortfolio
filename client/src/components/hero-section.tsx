@@ -4,7 +4,7 @@ import { useTypingAnimation } from "@/hooks/use-typing-animation";
 import { Terminal, Code } from "lucide-react";
 
 export default function HeroSection() {
-  const typingText = useTypingAnimation("CISCO Ethical Hacker & AI/ML Developer", 100);
+  const typingText = useTypingAnimation("Verified Ethical Hacker & AI/ML Developer", 100);
 
   const handleScrollToSection = (sectionId: string) => {
     const element = document.querySelector(sectionId);
