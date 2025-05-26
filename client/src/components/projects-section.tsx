@@ -67,10 +67,15 @@ export default function ProjectsSection() {
             </div>
             
             <div className="text-center mt-8">
-              <button className="neon-border px-6 py-3 rounded font-mono hover-matrix transition-all duration-300">
+              <a
+                href="https://github.com/ohmic-guy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="neon-border px-6 py-3 rounded font-mono hover-matrix transition-all duration-300 inline-block"
+              >
                 <Github className="inline-block w-4 h-4 mr-2" />
                 View All Projects
-              </button>
+              </a>
             </div>
           </div>
         </TerminalWindow>
