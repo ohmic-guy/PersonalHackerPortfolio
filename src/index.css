@@ -31,8 +31,10 @@
   --blood-red: 0 100% 35%; /* #B30000 */
   --dark-red: 0 85% 25%; /* #661515 */
   --warning-orange: 25 100% 50%; /* #FF8000 */
-  --terminal-green: 120 100% 35%; /* #00B300 */
+  --terminal-green: 120 100% 40%; /* #00CC00 */
+  --matrix-green: 120 100% 50%; /* #00FF00 */
   --exploit-purple: 270 100% 60%; /* #9933FF */
+  --cyber-cyan: 180 100% 50%; /* #00FFFF */
   --dark-bg: 0 0% 4%; /* #0A0A0A */
   --dark-surface: 0 0% 8%; /* #141414 */
   --darker-surface: 0 0% 6%; /* #0F0F0F */
@@ -96,6 +98,14 @@
   color: hsl(var(--terminal-green));
 }
 
+.text-matrix-green {
+  color: hsl(var(--matrix-green));
+}
+
+.text-cyber-cyan {
+  color: hsl(var(--cyber-cyan));
+}
+
 .text-warning-orange {
   color: hsl(var(--warning-orange));
 }
@@ -136,6 +146,10 @@
   border-color: hsl(var(--hack-red));
 }
 
+.border-terminal-green {
+  border-color: hsl(var(--terminal-green));
+}
+
 /* Terminal window styling */
 .terminal-window {
   background: linear-gradient(145deg, hsl(var(--darker-surface)), hsl(var(--dark-bg)));
@@ -164,7 +178,7 @@
   box-shadow: 0 4px 20px hsla(var(--hack-red) / 0.2);
 }
 
-/* Red code rain animation */
+/* Dual color code rain animation */
 .matrix-bg {
   position: fixed;
   top: 0;
@@ -178,11 +192,19 @@
 
 .matrix-char {
   position: absolute;
-  color: hsl(var(--hack-red));
   font-family: 'Fira Code', monospace;
   font-size: 14px;
   animation: matrix-rain linear infinite;
   opacity: 0.6;
+}
+
+.matrix-char:nth-child(odd) {
+  color: hsl(var(--terminal-green));
+  text-shadow: 0 0 5px hsla(var(--terminal-green) / 0.5);
+}
+
+.matrix-char:nth-child(even) {
+  color: hsl(var(--hack-red));
   text-shadow: 0 0 5px hsla(var(--hack-red) / 0.5);
 }
 
@@ -280,6 +302,33 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Terminal progress bars */
+.progress-bar-red {
+  background: linear-gradient(90deg, hsl(var(--hack-red)), hsl(var(--blood-red)));
+  box-shadow: 0 0 10px hsla(var(--hack-red) / 0.5);
+}
+
+.progress-bar-green {
+  background: linear-gradient(90deg, hsl(var(--terminal-green)), hsl(var(--matrix-green)));
+  box-shadow: 0 0 10px hsla(var(--terminal-green) / 0.5);
+}
+
+.progress-bar-purple {
+  background: linear-gradient(90deg, hsl(var(--exploit-purple)), hsla(var(--exploit-purple) / 0.8));
+  box-shadow: 0 0 10px hsla(var(--exploit-purple) / 0.5);
+}
+
+.progress-bar-orange {
+  background: linear-gradient(90deg, hsl(var(--warning-orange)), hsla(var(--warning-orange) / 0.8));
+  box-shadow: 0 0 10px hsla(var(--warning-orange) / 0.5);
+}
+
+/* Enhanced glow effects */
+.green-glow {
+  box-shadow: 0 0 15px hsla(var(--terminal-green) / 0.3), inset 0 0 15px hsla(var(--terminal-green) / 0.05);
+  border: 1px solid hsl(var(--terminal-green));
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -290,7 +339,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--matrix));
+  background: linear-gradient(180deg, hsl(var(--hack-red)), hsl(var(--terminal-green)));
   border-radius: 4px;
 }
 
