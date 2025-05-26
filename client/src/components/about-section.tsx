@@ -26,10 +26,10 @@ export default function AboutSection() {
                   <div className="bg-dark-surface p-4 rounded border border-dark-border">
                     <h3 className="text-matrix font-mono mb-2">Current Focus:</h3>
                     <ul className="space-y-1">
-                      <li>• Deep Learning & Neural Networks</li>
                       <li>• Ethical Hacking & Penetration Testing</li>
-                      <li>• Computer Vision & NLP</li>
                       <li>• Cryptography & Network Security</li>
+                      <li>• Deep Learning and Neural Networks</li>
+                      <li>• Computer Vision & NLP</li>
                     </ul>
                   </div>
                   

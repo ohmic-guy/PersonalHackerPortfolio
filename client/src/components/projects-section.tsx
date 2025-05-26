@@ -4,9 +4,9 @@ import { Shield, Brain, DollarSign, Github, ExternalLink } from "lucide-react";
 export default function ProjectsSection() {
   const projects = [
     {
-      title: "AI Security Scanner",
-      description: "ML-powered vulnerability detection system using deep learning to identify security threats in real-time.",
-      tech: ["Python", "TensorFlow", "Flask"],
+      title: "Cryptex Terminal",
+      description: "A real-time encryption-decryption application for secure communication, featuring advanced cryptographic algorithms.",
+      tech: ["Python", "Flask", "React"],
       icon: Shield,
     },
     {
@@ -16,9 +16,9 @@ export default function ProjectsSection() {
       icon: Brain,
     },
     {
-      title: "Crypto Portfolio Tracker",
-      description: "Secure cryptocurrency portfolio management with advanced encryption and real-time market analysis.",
-      tech: ["React", "Node.js", "MongoDB"],
+      title: "Personal Portfolio",
+      description: "A modern portfolio website showcasing my projects, skills, and achievements with a sleek design and smooth animations.",
+      tech: ["Next.js", "Tailwind CSS", "TypeScript"],
       icon: DollarSign,
     },
   ];

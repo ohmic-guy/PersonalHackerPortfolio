@@ -85,9 +85,9 @@ export default function ContactSection() {
   ];
 
   const quickLinks = [
-    { icon: Github, label: "GitHub Repository", href: "#" },
+    { icon: Github, label: "GitHub", href: "https://github.com/ohmic-guy" },
     { icon: FileText, label: "Download Resume", href: "#" },
-    { icon: Camera, label: "Photography Portfolio", href: "#" },
+    { icon: Camera, label: "Photography Portfolio", href: "https://instagram.com/ohmic_stuffs" },
   ];
 
   return (
