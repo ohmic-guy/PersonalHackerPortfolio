@@ -6,13 +6,13 @@ export default function ProjectsSection() {
     {
       title: "Cryptex Terminal",
       description: "A real-time encryption-decryption application for secure communication, featuring advanced cryptographic algorithms.",
-      tech: ["Python", "Flask", "React"],
+      tech: ["React", "Flask", "Fernet-Cryptography"],
       icon: Shield,
     },
     {
-      title: "Neural Network Visualizer",
-      description: "Interactive web application to visualize neural network architectures and training processes in real-time.",
-      tech: ["React", "D3.js", "PyTorch"],
+      title: "RageWall",
+      description: "An intelligent DDoS protection System which analyses the Network Traffic and fights back",
+      tech: ["React", "Flask", "Scikit Learn"],
       icon: Brain,
     },
     {
