@@ -80,13 +80,13 @@ export default function ContactSection() {
       icon: MapPin,
       label: "Location",
       value: "Jajpur, Odisha, India",
-      href: null,
+      href: 'https://www.google.com/maps/place/Jajpur,+Odisha/@20.9083,86.3292,12z',
     },
   ];
 
   const quickLinks = [
     { icon: Github, label: "GitHub", href: "https://github.com/ohmic-guy" },
-    { icon: FileText, label: "Download Resume", href: "#" },
+    { icon: FileText, label: "Download Resume", href: "https://drive.google.com/file/d/1xnkmo3QaoLHLvgqRmNtgCpfM3dNoPYvg/view?usp=drive_link"},
     { icon: Camera, label: "Photography Portfolio", href: "https://instagram.com/ohmic.stuffs" },
   ];
 
