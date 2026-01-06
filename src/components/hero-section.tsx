@@ -1,10 +1,10 @@
 import { Link } from "wouter";
 import TerminalWindow from "./terminal-window";
 import { useTypingAnimation } from "@/hooks/use-typing-animation";
-import { Terminal, Code, Skull, Shield } from "lucide-react";
+import { Gamepad2, Cpu, Zap, Trophy, Sparkles, Shield } from "lucide-react";
 
 export default function HeroSection() {
-  const typingText = useTypingAnimation("RED TEAMER | ETHICAL HACKER | AI/ML SPECIALIST", 80);
+  const typingText = useTypingAnimation("GAME DEVELOPER • CYBER WARRIOR • AI ARCHITECT", 80);
 
   const handleScrollToSection = (sectionId: string) => {
     const element = document.querySelector(sectionId);
@@ -16,61 +16,94 @@ export default function HeroSection() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative scan-lines">
       <div className="container mx-auto px-6 text-center animate-fade-in">
-        <TerminalWindow title="redteam_operative.exe" className="max-w-4xl mx-auto">
-          <div className="font-mono text-left space-y-4">
-            <div className="text-hack-red">$ whoami</div>
-            <div className="ml-4">
+        <TerminalWindow title="◢ MATRIX_GAME.exe ◣" className="max-w-5xl mx-auto pixel-border">
+          <div className="font-mono text-left space-y-6">
+            {/* Game Start Sequence */}
+            <div className="text-neon-cyan text-center mb-4">
+              <div className="text-sm">▼ SYSTEM BOOT SEQUENCE ▼</div>
+              <div className="text-xs text-neon-magenta">LOADING PLAYER DATA...</div>
+            </div>
+            
+            {/* Player Identity */}
+            <div className="text-neon-magenta">{'>'} PLAYER_ID.identify()</div>
+            <div className="ml-6">
               <h1 
-                className="text-4xl md:text-6xl font-bold mb-2 glitch-text text-text-primary" 
+                className="text-5xl md:text-7xl font-bold mb-3 arcade-glow" 
                 data-text="OMMKAR ANKIT ROUT"
               >
-                OMMKAR ANKIT ROUT
+                <span className="rainbow-text">OMMKAR ANKIT ROUT</span>
               </h1>
-              <div className="text-xl md:text-2xl text-hack-red min-h-[2rem]">
+              <div className="text-xl md:text-3xl text-neon-cyan min-h-[2.5rem]">
                 {typingText}
-                <span className="animate-terminal-cursor">|</span>
+                <span className="animate-terminal-cursor text-neon-yellow">█</span>
               </div>
             </div>
             
-            <div className="text-hack-red mt-8">$ cat target_profile.txt</div>
-            <div className="ml-4 text-text-secondary space-y-1">
-              <p className="mb-2 flex items-center">
-                <span className="text-hack-red mr-2">[+]</span>
-                <Shield className="w-4 h-4 mr-2 text-terminal-green" />
-                CISCO Verified Ethical Hacker
-              </p>
-              <p className="mb-2 flex items-center">
-                <span className="text-hack-red mr-2">[+]</span>
-                <Terminal className="w-4 h-4 mr-2 text-exploit-purple" />
-                AI/ML Security Specialist
-              </p>
-              <p className="mb-2 flex items-center">
-                <span className="text-hack-red mr-2">[+]</span>
-                <Code className="w-4 h-4 mr-2 text-warning-orange" />
-                ThingQbator Red Team Member
-              </p>
-              <p className="mb-2 flex items-center">
-                <span className="text-hack-red mr-2">[+]</span>
-                <Skull className="w-4 h-4 mr-2 text-hack-red" />
-                B.Tech CSE (AI/ML) - Class of 2028
-              </p>
+            {/* Stats Display */}
+            <div className="text-neon-magenta mt-8">{'>'} STATS.display()</div>
+            <div className="ml-6 grid md:grid-cols-2 gap-3">
+              <div className="retro-card p-3 flex items-center space-x-3">
+                <div className="pulse-glow">
+                  <Shield className="w-8 h-8 text-neon-cyan" />
+                </div>
+                <div>
+                  <div className="text-neon-yellow text-xs">DEFENSE LVL</div>
+                  <div className="text-white">CISCO Certified Hacker</div>
+                </div>
+              </div>
+              
+              <div className="retro-card p-3 flex items-center space-x-3">
+                <div className="pulse-glow">
+                  <Cpu className="w-8 h-8 text-neon-magenta" />
+                </div>
+                <div>
+                  <div className="text-neon-yellow text-xs">INTELLIGENCE</div>
+                  <div className="text-white">AI/ML Specialist</div>
+                </div>
+              </div>
+              
+              <div className="retro-card p-3 flex items-center space-x-3">
+                <div className="pulse-glow">
+                  <Zap className="w-8 h-8 text-electric-orange" />
+                </div>
+                <div>
+                  <div className="text-neon-yellow text-xs">POWER</div>
+                  <div className="text-white">ThingQbator Member</div>
+                </div>
+              </div>
+              
+              <div className="retro-card p-3 flex items-center space-x-3">
+                <div className="pulse-glow">
+                  <Trophy className="w-8 h-8 text-neon-green" />
+                </div>
+                <div>
+                  <div className="text-neon-yellow text-xs">ACHIEVEMENT</div>
+                  <div className="text-white">B.Tech CSE - 2028</div>
+                </div>
+              </div>
             </div>
             
+            {/* Action Buttons */}
             <div className="flex flex-wrap gap-4 mt-8 justify-center md:justify-start">
               <button
                 onClick={() => handleScrollToSection('#contact')}
-                className="red-border px-6 py-3 rounded font-mono hover-hack transition-all duration-300"
+                className="neon-button px-8 py-4 rounded font-bold text-neon-cyan hover:text-neon-magenta transition-all duration-300 flex items-center"
               >
-                <Terminal className="inline-block w-4 h-4 mr-2" />
-                ./establish_connection
+                <Sparkles className="inline-block w-5 h-5 mr-2" />
+                START MISSION
               </button>
               <button
                 onClick={() => handleScrollToSection('#projects')}
-                className="border border-dark-border px-6 py-3 rounded font-mono hover:border-hack-red transition-all duration-300"
+                className="pixel-border bg-darker-surface px-8 py-4 rounded font-bold text-neon-yellow hover:text-neon-cyan transition-all duration-300 flex items-center"
               >
-                <Skull className="inline-block w-4 h-4 mr-2" />
-                ./view_exploits
+                <Gamepad2 className="inline-block w-5 h-5 mr-2" />
+                VIEW LEVELS
               </button>
+            </div>
+            
+            {/* Game Info */}
+            <div className="mt-6 text-center text-neon-green text-sm">
+              <div>▲ PRESS ANY BUTTON TO CONTINUE ▲</div>
             </div>
           </div>
         </TerminalWindow>
