@@ -53,17 +53,28 @@ export default function SkillsSection() {
                   CODING POWER LEVELS
                 </h3>
                 <div className="space-y-4">
-                  {programmingSkills.map((skill, index) => (
+                  {programmingSkills.map((skill, index) => {
+                    const getLevelColor = () => {
+                      switch (skill.color) {
+                        case 'neon-cyan': return 'text-neon-cyan';
+                        case 'neon-yellow': return 'text-neon-yellow';
+                        case 'neon-magenta': return 'text-neon-magenta';
+                        case 'arcade-purple': return 'text-arcade-purple';
+                        default: return 'text-neon-cyan';
+                      }
+                    };
+                    
+                    return (
                     <div key={index} className="space-y-2">
                       <div className="flex justify-between items-center">
                         <span className="text-white font-bold">{skill.name}</span>
-                        <span className={`text-${skill.color} font-bold`}>
+                        <span className={`${getLevelColor()} font-bold`}>
                           LVL {skill.level}
                         </span>
                       </div>
                       <div className="relative w-full h-6 bg-dark-bg rounded-full overflow-hidden border-2 border-neon-cyan">
                         <div 
-                          className={`h-full bg-gradient-to-r from-neon-cyan to-neon-magenta relative`}
+                          className="h-full bg-gradient-to-r from-neon-cyan to-neon-magenta relative"
                           style={{ width: `${skill.level}%` }}
                         >
                           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30 animate-pulse"></div>
@@ -76,7 +87,8 @@ export default function SkillsSection() {
                         </div>
                       </div>
                     </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
               

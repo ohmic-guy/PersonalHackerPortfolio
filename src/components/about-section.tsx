@@ -133,14 +133,24 @@ export default function AboutSection() {
               <div className="grid md:grid-cols-2 gap-6">
                 {playerStats.map((stat, index) => {
                   const Icon = stat.icon;
+                  const getStatColor = () => {
+                    switch (stat.color) {
+                      case 'neon-cyan': return 'text-neon-cyan';
+                      case 'neon-magenta': return 'text-neon-magenta';
+                      case 'arcade-purple': return 'text-arcade-purple';
+                      case 'neon-yellow': return 'text-neon-yellow';
+                      default: return 'text-neon-cyan';
+                    }
+                  };
+                  
                   return (
                     <div key={index} className="retro-card p-5 hover-matrix">
                       <div className="flex justify-between items-center mb-3">
-                        <span className={`text-${stat.color} flex items-center font-bold text-lg`}>
+                        <span className={`${getStatColor()} flex items-center font-bold text-lg`}>
                           <Icon className="w-5 h-5 mr-2" />
                           {stat.label}
                         </span>
-                        <span className={`text-xs px-3 py-1 rounded font-bold pixel-border text-${stat.color}`}>
+                        <span className={`text-xs px-3 py-1 rounded font-bold pixel-border ${getStatColor()}`}>
                           {stat.rank}
                         </span>
                       </div>
@@ -148,13 +158,13 @@ export default function AboutSection() {
                         <div className="flex items-center space-x-3">
                           <div className="flex-1 bg-dark-bg rounded-full h-4 border-2 border-neon-cyan overflow-hidden">
                             <div 
-                              className={`h-full bg-gradient-to-r from-neon-cyan to-neon-magenta transition-all duration-1000 relative`}
+                              className="h-full bg-gradient-to-r from-neon-cyan to-neon-magenta transition-all duration-1000 relative"
                               style={{ width: `${stat.value}%` }}
                             >
                               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30 animate-pulse"></div>
                             </div>
                           </div>
-                          <span className={`text-${stat.color} font-mono text-lg font-bold min-w-[3rem]`}>
+                          <span className={`${getStatColor()} font-mono text-lg font-bold min-w-[3rem]`}>
                             {stat.value}%
                           </span>
                         </div>

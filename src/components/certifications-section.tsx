@@ -84,6 +84,16 @@ export default function CertificationsSection() {
             <div className="grid md:grid-cols-2 gap-6 ml-4">
               {certifications.map((cert, index) => {
                 const Icon = cert.icon;
+                const getIconColor = () => {
+                  switch (cert.color) {
+                    case 'neon-cyan': return 'text-neon-cyan';
+                    case 'neon-magenta': return 'text-neon-magenta';
+                    case 'neon-yellow': return 'text-neon-yellow';
+                    case 'neon-green': return 'text-neon-green';
+                    default: return 'text-neon-cyan';
+                  }
+                };
+                
                 return (
                   <div 
                     key={index} 
@@ -93,7 +103,7 @@ export default function CertificationsSection() {
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center space-x-3">
                         <div className="pulse-glow p-3 bg-darker-surface rounded-lg">
-                          <Icon className={`w-8 h-8 text-${cert.color}`} />
+                          <Icon className={`w-8 h-8 ${getIconColor()}`} />
                         </div>
                         <div>
                           <h3 className="text-xl font-bold text-white group-hover:text-neon-cyan transition-colors">
