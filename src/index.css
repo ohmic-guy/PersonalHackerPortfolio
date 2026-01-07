@@ -26,22 +26,34 @@
   --ring: 0 85% 55%; /* #DC2626 */
   --radius: 0.25rem;
 
-  /* Red teamer theme colors */
-  --hack-red: 0 85% 55%; /* #DC2626 */
-  --blood-red: 0 100% 35%; /* #B30000 */
-  --dark-red: 0 85% 25%; /* #661515 */
-  --warning-orange: 25 100% 50%; /* #FF8000 */
-  --terminal-green: 120 100% 40%; /* #00CC00 */
-  --matrix-green: 120 100% 50%; /* #00FF00 */
-  --exploit-purple: 270 100% 60%; /* #9933FF */
-  --cyber-cyan: 180 100% 50%; /* #00FFFF */
-  --dark-bg: 0 0% 4%; /* #0A0A0A */
-  --dark-surface: 0 0% 8%; /* #141414 */
-  --darker-surface: 0 0% 6%; /* #0F0F0F */
-  --dark-border: 0 0% 15%; /* #262626 */
-  --text-primary: 0 0% 95%; /* #F2F2F2 */
-  --text-secondary: 0 0% 70%; /* #B3B3B3 */
-  --text-danger: 0 85% 55%; /* #DC2626 */
+  /* Retro Gaming Matrix Theme Colors */
+  --neon-cyan: 180 100% 50%; /* #00FFFF - Primary neon */
+  --neon-magenta: 320 100% 50%; /* #FF00FF - Secondary neon */
+  --neon-yellow: 60 100% 50%; /* #FFFF00 - Accent */
+  --neon-green: 120 100% 50%; /* #00FF00 - Matrix green */
+  --neon-pink: 330 100% 60%; /* #FF3399 - Highlight */
+  --neon-blue: 210 100% 50%; /* #0080FF - Cool accent */
+  --arcade-purple: 270 100% 60%; /* #9933FF - Retro purple */
+  --electric-orange: 30 100% 50%; /* #FF9900 - Warning */
+  
+  /* Dark Gaming Backgrounds */
+  --dark-bg: 240 15% 6%; /* #0D0D1A - Deep blue-black */
+  --dark-surface: 240 12% 10%; /* #151521 - Surface */
+  --darker-surface: 240 15% 8%; /* #111118 - Deeper surface */
+  --dark-border: 240 20% 20%; /* #29293D - Border */
+  
+  /* Text Colors */
+  --text-primary: 0 0% 98%; /* #FAFAFA - Bright white */
+  --text-secondary: 240 5% 70%; /* #B0B0BD - Muted */
+  --text-glow: 180 100% 50%; /* #00FFFF - Glowing text */
+  
+  /* Legacy aliases for compatibility */
+  --hack-red: 320 100% 50%; /* Now magenta */
+  --terminal-green: 120 100% 50%; /* Neon green */
+  --matrix-green: 120 100% 50%; /* Neon green */
+  --cyber-cyan: 180 100% 50%; /* Neon cyan */
+  --exploit-purple: 270 100% 60%; /* Arcade purple */
+  --warning-orange: 30 100% 50%; /* Electric orange */
 }
 
 .dark {
@@ -345,4 +357,152 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--cyber-cyan));
+}
+
+/* RETRO GAMING EFFECTS */
+
+/* Pixel border effect */
+.pixel-border {
+  border: 3px solid hsl(var(--neon-cyan));
+  box-shadow: 
+    0 0 10px hsl(var(--neon-cyan)),
+    inset 0 0 10px hsla(var(--neon-cyan) / 0.2),
+    0 0 20px hsla(var(--neon-cyan) / 0.4);
+  background: linear-gradient(145deg, hsla(var(--neon-cyan) / 0.05), transparent);
+}
+
+/* Arcade glow effect */
+.arcade-glow {
+  text-shadow: 
+    0 0 10px hsl(var(--neon-cyan)),
+    0 0 20px hsl(var(--neon-cyan)),
+    0 0 30px hsl(var(--neon-cyan)),
+    0 0 40px hsl(var(--neon-magenta)),
+    0 0 70px hsl(var(--neon-magenta));
+}
+
+/* Neon button effect */
+.neon-button {
+  background: linear-gradient(145deg, hsla(var(--neon-cyan) / 0.1), hsla(var(--neon-magenta) / 0.1));
+  border: 2px solid hsl(var(--neon-cyan));
+  box-shadow: 
+    0 0 10px hsl(var(--neon-cyan)),
+    inset 0 0 10px hsla(var(--neon-cyan) / 0.1);
+  transition: all 0.3s ease;
+}
+
+.neon-button:hover {
+  border-color: hsl(var(--neon-magenta));
+  box-shadow: 
+    0 0 20px hsl(var(--neon-magenta)),
+    inset 0 0 20px hsla(var(--neon-magenta) / 0.2),
+    0 0 30px hsla(var(--neon-magenta) / 0.4);
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Retro card with scanlines */
+.retro-card {
+  background: linear-gradient(145deg, hsla(var(--arcade-purple) / 0.1), hsla(var(--dark-surface)));
+  border: 2px solid hsla(var(--neon-cyan) / 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.retro-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(transparent 50%, hsla(var(--neon-cyan) / 0.03) 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+}
+
+.retro-card:hover {
+  border-color: hsl(var(--neon-cyan));
+  box-shadow: 
+    0 0 20px hsla(var(--neon-cyan) / 0.3),
+    inset 0 0 20px hsla(var(--neon-cyan) / 0.05);
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+}
+
+/* Pixel art style corners */
+.pixel-corners {
+  position: relative;
+  clip-path: polygon(
+    0 8px, 8px 8px, 8px 0,
+    calc(100% - 8px) 0, calc(100% - 8px) 8px, 100% 8px,
+    100% calc(100% - 8px), calc(100% - 8px) calc(100% - 8px), calc(100% - 8px) 100%,
+    8px 100%, 8px calc(100% - 8px), 0 calc(100% - 8px)
+  );
+}
+
+/* Pulsing glow animation */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 
+      0 0 10px hsl(var(--neon-cyan)),
+      0 0 20px hsla(var(--neon-cyan) / 0.5);
+  }
+  50% {
+    box-shadow: 
+      0 0 20px hsl(var(--neon-magenta)),
+      0 0 40px hsla(var(--neon-magenta) / 0.5);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Game screen flicker */
+@keyframes screen-flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.95; }
+}
+
+.screen-flicker {
+  animation: screen-flicker 0.15s infinite;
+}
+
+/* Text utilities for retro gaming */
+.text-neon-cyan { color: hsl(var(--neon-cyan)); }
+.text-neon-magenta { color: hsl(var(--neon-magenta)); }
+.text-neon-yellow { color: hsl(var(--neon-yellow)); }
+.text-neon-green { color: hsl(var(--neon-green)); }
+.text-neon-pink { color: hsl(var(--neon-pink)); }
+.text-arcade-purple { color: hsl(var(--arcade-purple)); }
+.text-electric-orange { color: hsl(var(--electric-orange)); }
+
+/* Background utilities */
+.bg-neon-cyan { background-color: hsl(var(--neon-cyan)); }
+.bg-neon-magenta { background-color: hsl(var(--neon-magenta)); }
+.bg-arcade-purple { background-color: hsl(var(--arcade-purple)); }
+
+/* Rainbow text effect for headers */
+@keyframes rainbow-text {
+  0% { color: hsl(var(--neon-cyan)); }
+  25% { color: hsl(var(--neon-magenta)); }
+  50% { color: hsl(var(--neon-yellow)); }
+  75% { color: hsl(var(--neon-green)); }
+  100% { color: hsl(var(--neon-cyan)); }
+}
+
+.rainbow-text {
+  animation: rainbow-text 4s linear infinite;
+}
+
+/* Hover matrix effect */
+.hover-matrix:hover {
+  background: linear-gradient(45deg, 
+    hsla(var(--neon-cyan) / 0.1), 
+    hsla(var(--neon-magenta) / 0.1),
+    hsla(var(--arcade-purple) / 0.1));
+  border-color: hsl(var(--neon-cyan));
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px hsla(var(--neon-cyan) / 0.3);
 }
